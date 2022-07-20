@@ -1,12 +1,17 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println("Hello world!");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a character: ");
+        char ch = scanner.next().charAt(0);
+        scanner.close();
+        Check(ch);
     }
 
-    public static void Check(char input) {
+    public static void Check(char ch) {
         boolean isVowel = false;
-        switch (input) {
+        switch (Character.toLowerCase(ch)) {
             case 'a':
             case 'e':
             case 'i':
@@ -15,12 +20,12 @@ public class Main {
                 isVowel = true;
         }
         if (isVowel)
-            System.out.println(input + " is vowel");
+            System.out.println(ch + " is vowel");
         else {
-            if ((input >= 'a' && input <= 'z') || (input >= 'A' && input <= 'Z'))
-                System.out.println(input + " is consonant");
+            if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
+                System.out.println(ch + " is consonant");
             else
-                System.out.println(input + " is not in alphabet");
+                System.out.println(ch + " is not in alphabet");
         }
     }
 }
