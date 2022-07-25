@@ -14,7 +14,7 @@ public class Main {
     }
 
     public static int LCM(int a, int b) {
-        int lcm = a > b ? a : b;
+        int lcm = Math.max(a, b);
         while (true) {
             if (lcm % a == 0 && lcm % b == 0)
                 return lcm;
